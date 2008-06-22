@@ -7,7 +7,7 @@ VERSION = "0.0.1"
 AUTHOR = "Dan Webb"
 EMAIL = "dan@danwebb.net"
 HOMEPAGE = "http://merb-plugins.rubyforge.org/merb_openid/"
-SUMMARY = "Merb plugin that for OpenID authentication"
+SUMMARY = "Merb plugin for OpenID authentication"
 
 spec = Gem::Specification.new do |s|
   s.name = NAME
