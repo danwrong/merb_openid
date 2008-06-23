@@ -6,6 +6,7 @@ Gem::Specification.new do |s|
   s.summary = 'A Merb plugin for consuming OpenID'
   s.description = s.summary
   s.author = 'Dan Webb'
+  s.email = 'dan@danwebb.net'
   s.add_dependency('merb', '>= 0.9.0')
   s.add_dependency('ruby-openid', '>= 2.0.3')
   s.require_path = 'lib'
