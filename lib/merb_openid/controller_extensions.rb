@@ -63,7 +63,7 @@ module MerbOpenID
           when OpenID::Consumer::FAILURE
             yield :failed, identity_url, nil
           when OpenID::Consumer::SETUP_NEEDED
-            yield :setup_needed, response.setup_url, nil
+            yield :setup_needed, identity_url, response.setup_url
         end
       rescue Timeout::Error
         yield :failed
