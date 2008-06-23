@@ -15,7 +15,7 @@ module MerbOpenID
   module ControllerExtensions
     
     def openid_request?(open_id_param=params[:openid_url])
-      !!((open_id_param && !open_id_param.blank?) || params[:openid_complete])
+      !!((open_id_param && !open_id_param.strip.empty?) || params[:openid_complete])
     end
     
     def openid_authenticate(options={}, &block)
@@ -28,11 +28,11 @@ module MerbOpenID
       end
     end
     
+    private
+    
     def openid_consumer
       @@openid_consumer ||= OpenID::Consumer.new session, MerbOpenID.store
     end
-    
-    private
     
     def begin_openid_authentication(openid_url, options={})
       fields = options[:sreg] || {}
@@ -102,9 +102,3 @@ module MerbOpenID
   end
   
 end
-
-Merb::Controller.class_eval do
-  include MerbOpenID::ControllerExtensions
-end
-
-MerbOpenID.store = (Merb::Config[:merb_openid] && Merb::Config[:merb_openid][:store]) || OpenID::Store::Memory.new
