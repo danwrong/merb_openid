@@ -11,5 +11,5 @@ Gem::Specification.new do |s|
   s.add_dependency('ruby-openid', '>= 2.0.3')
   s.require_path = 'lib'
   s.autorequire = s.name
-  s.files = %w(LICENSE README Rakefile) + Dir.glob("{lib,spec}/**/*")
+  s.files = %w(LICENSE README Rakefile lib/merb_openid.rb lib/merb_openid/controller_extensions.rb spec/merb_openid_spec.rb spec/spec_helper.rb)
 end
