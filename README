@@ -9,7 +9,7 @@ Installation
 
 Easy:
 
-   gem install merb_openid --source http://gems.github.com
+   gem install danwrong-merb_openid --source http://gems.github.com
    
 Then in your application's init.rb:
 
