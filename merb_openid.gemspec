@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'merb_openid'
-  s.version = '0.0.1'
+  s.version = '0.0.2'
   s.has_rdoc = true
   s.extra_rdoc_files = ["README", "LICENSE"]
   s.summary = 'A Merb plugin for consuming OpenID'
