@@ -6,6 +6,8 @@ spec = eval(File.read(File.join(File.dirname(__FILE__), 'merb_openid.gemspec')))
 
 Rake::GemPackageTask.new(spec) do |pkg|
   pkg.gem_spec = spec
+  pkg.need_zip = true
+  pkg.need_tar = true
 end
 
 task :install => [:package] do
@@ -21,7 +23,9 @@ task :publish_packages => [:verify_user, :package] do
   package_name = [spec.name, spec.version].join '-'
   
   release_files = FileList[
-    "pkg/#{package_name}.gem"
+    "pkg/#{package_name}.gem",
+    "pkg/#{package_name}.tgz",
+    "pkg/#{package_name}.zip"
   ]
   unless spec.version =~ /RC[0-9]$/
     require 'meta_project'
