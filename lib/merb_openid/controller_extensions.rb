@@ -93,11 +93,11 @@ module MerbOpenID
     end
     
     def openid_trust_root
-      @openid_trust_root ||= [request.protocol, request.host, "/"].join
+      @openid_trust_root ||= [request.protocol, '://', request.host, "/"].join
     end
     
     def openid_return_to
-      @openid_return_to ||= [request.protocol, request.host, request.uri].join
+      @openid_return_to ||= [request.protocol, '://', request.host, request.uri].join
     end
     
   end
