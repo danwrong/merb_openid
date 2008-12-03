@@ -49,7 +49,7 @@ module MerbOpenID
     end
     
     def complete_openid_authentication
-      query_string_params = Merb::Request.query_parse(request.query_string)
+      query_string_params = Merb::Parse.query(request.query_string)
       
       begin
         response = openid_consumer.complete(query_string_params, openid_return_to)
